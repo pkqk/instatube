@@ -8,6 +8,10 @@
 <%= csrf_meta_tag %>
 </head>
 <body>
+<%= content_tag(:div, flash[:error], :class => 'error') if flash[:error] %>
 <%= yield %>
+<% if logged_in? %>
+<%= button_to "Logout", logout_users_path %>
+<% end %>
 </body>
 </html>

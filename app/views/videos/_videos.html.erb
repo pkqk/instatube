@@ -1,0 +1,6 @@
+<h2>Your videos</h2>
+<ul>
+  <% current_user.videos.each do |video| %>
+  <li><%= render video %></li>
+  <% end %>
+</ul>

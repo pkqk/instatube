@@ -12,6 +12,15 @@ Instatube::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  # resources :videos
+  resources :users do
+    resources :videos
+    collection do
+      get 'login'
+      post 'login'
+      post 'logout'
+    end
+  end
 
   # Sample resource route with options:
   #   resources :products do

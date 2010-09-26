@@ -1,0 +1,5 @@
+<% form_for :user do |f| %>
+  <%= f.text_field :email %>
+  <%= f.submit "Login" %>
+<% end %>
+or <%= link_to 'register', new_user_path %>
