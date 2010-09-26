@@ -6,4 +6,5 @@ require 'form_builder'
 Instatube::Application.initialize!
 Instatube::Application.configure do
   config.action_view.default_form_builder = FormBuilder
+  config.action_view.field_error_proc = Proc.new { |html_tag,instance| html_tag }
 end

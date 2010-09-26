@@ -7,6 +7,9 @@ class UsersController < ApplicationController
     @user = User.create!(params[:user])
     session[:user_id] = @user.id
     redirect_to user_path(current_user)
+  rescue ActiveRecord::RecordInvalid => bang
+    @user = bang.record
+    render :action => :new
   end
   
   def show
