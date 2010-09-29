@@ -1,8 +1,10 @@
 <div class="video">
-  <p><a href="<%= video.source_url %>">source</a></p>
+  <% if false %>
   <% if video.code.present? %>
   <div class="cinema">
     <%= video.code.html_safe %>
   </div>
   <% end %>
+  <% end %>
+  <%= video.renderer.to_html %>
 </div>

@@ -6,4 +6,8 @@ module ApplicationHelper
       "Instatube"
     end
   end
+  
+  def default_title
+    @title || "#{params[:controller].singularize}[#{params[:action]}] || Instatube"
+  end
 end

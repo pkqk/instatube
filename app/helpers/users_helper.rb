@@ -7,7 +7,7 @@ module UsersHelper
     if (id = session[:user_id]).present?
       User.find(id)
     else
-      raise "not loged in"
+      raise User::NotAuthenticated.new
     end
   end
 end
